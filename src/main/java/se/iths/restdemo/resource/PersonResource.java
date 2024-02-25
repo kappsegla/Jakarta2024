@@ -45,7 +45,6 @@ public class PersonResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    //@Produces(MediaType.APPLICATION_JSON)
     public Response create(PersonDto personDto){
         //Save to database
         var p = personRepository.add(PersonDto.map(personDto));
