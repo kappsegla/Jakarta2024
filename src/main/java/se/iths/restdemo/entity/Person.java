@@ -1,6 +1,11 @@
 package se.iths.restdemo.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import se.iths.restdemo.validate.CustomAge;
+
 
 import java.util.Objects;
 
