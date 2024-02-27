@@ -73,7 +73,6 @@ class PersonResourceTest {
         // Assert the response status code and content
         assertEquals(403, response.getStatus());
         assertEquals("", response.getContentAsString());
-
     }
 
 
