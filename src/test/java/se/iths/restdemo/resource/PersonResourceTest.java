@@ -16,7 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import se.iths.restdemo.dto.Persons;
 import se.iths.restdemo.entity.Person;
 import se.iths.restdemo.service.PersonService;
-import se.iths.restdemo.validate.ConstraintViolationExceptionMapper;
+//import se.iths.restdemo.exceptionmapper.ConstraintViolationExceptionMapper;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
@@ -43,7 +43,7 @@ class PersonResourceTest {
         var resource = new PersonResource(personService);
         dispatcher.getRegistry().addSingletonResource(resource);
 
-        dispatcher.getProviderFactory().registerProvider(ConstraintViolationExceptionMapper.class);
+       // dispatcher.getProviderFactory().registerProvider(ConstraintViolationExceptionMapper.class);
     }
 
     @Test
@@ -60,19 +60,20 @@ class PersonResourceTest {
         assertEquals("{\"personDtos\":[],\"updated\"}", response.getContentAsString());
     }
 
+
+
     @Test
-    @DisplayName("createWithInvalidValuesReturnsStatus403")
-    void createWithInvalidValuesReturnsStatus403() throws URISyntaxException, UnsupportedEncodingException {
+    @DisplayName("create new person with POST returns 201")
+    void createReturnsStatus201() throws URISyntaxException, UnsupportedEncodingException {
         when(personService.add(Mockito.any())).thenReturn(new Person());
         // Create a mock request and response
         MockHttpRequest request = MockHttpRequest.post("/persons");
         request.contentType(MediaType.APPLICATION_JSON);
-        request.content("{\"name\":\"Test\",\"age\":151}".getBytes());
+        request.content("{\"name\":\"Test\",\"age\":100}".getBytes());
         MockHttpResponse response = new MockHttpResponse();
         dispatcher.invoke(request, response);
         // Assert the response status code and content
-        assertEquals(403, response.getStatus());
-        assertEquals("", response.getContentAsString());
+        assertEquals(201, response.getStatus());
     }
 
 

@@ -1,4 +1,4 @@
-package se.iths.restdemo.validate;
+package se.iths.restdemo.exceptionmapper;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObject;

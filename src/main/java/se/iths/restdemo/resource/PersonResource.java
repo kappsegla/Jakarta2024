@@ -51,7 +51,7 @@ public class PersonResource {
         var p = personService.add(personDto);
         return Response.created(
                         //Ask Jakarta application server for hostname and url path
-                        URI.create(uriInfo.getAbsolutePath().toString() + "/"+ p.getId()))
+                        URI.create(uriInfo.getAbsolutePath().toString() + "/" + p.getId()))
                 .build();
     }
 }
