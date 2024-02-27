@@ -3,8 +3,10 @@ package se.iths.restdemo.resource;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 import se.iths.restdemo.dto.PersonDto;
 import se.iths.restdemo.dto.Persons;
 import se.iths.restdemo.service.PersonService;
@@ -14,6 +16,9 @@ import java.time.LocalDateTime;
 
 @Path("persons")
 public class PersonResource {
+
+    @Context
+    UriInfo uriInfo;
 
     private PersonService personService;
 
@@ -46,7 +51,7 @@ public class PersonResource {
         var p = personService.add(personDto);
         return Response.created(
                         //Ask Jakarta application server for hostname and url path
-                        URI.create("http://localhost:8080/api/persons/" + p.getId()))
+                        URI.create(uriInfo.getAbsolutePath().toString() + "/" + p.getId()))
                 .build();
     }
 }
