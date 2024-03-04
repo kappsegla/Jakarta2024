@@ -48,38 +48,6 @@
             <version>2.16.0</version>
             <scope>test</scope>
         </dependency>
-
-
-        <!--        <dependency>-->
-        <!--            <groupId>jakarta.transaction</groupId>-->
-        <!--            <artifactId>jakarta.transaction-api</artifactId>-->
-        <!--            <version>2.0.1</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>jakarta.persistence</groupId>-->
-        <!--            <artifactId>jakarta.persistence-api</artifactId>-->
-        <!--            <version>3.1.0</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>jakarta.enterprise</groupId>-->
-        <!--            <artifactId>jakarta.enterprise.cdi-api</artifactId>-->
-        <!--            <version>4.0.1</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>jakarta.ws.rs</groupId>-->
-        <!--            <artifactId>jakarta.ws.rs-api</artifactId>-->
-        <!--            <version>3.1.0</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>jakarta.servlet</groupId>-->
-        <!--            <artifactId>jakarta.servlet-api</artifactId>-->
-        <!--            <version>6.0.0</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-core</artifactId>
@@ -140,6 +108,12 @@
 <!--            <version>6.0.0</version>-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

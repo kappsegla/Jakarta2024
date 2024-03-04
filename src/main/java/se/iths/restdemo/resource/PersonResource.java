@@ -33,8 +33,7 @@ public class PersonResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Persons all() {
-        throw new NotFoundException();
-//        return personService.all();
+        return personService.all();
     }
 
     //Don't use primary key as id. Use nanoid or UUID
